@@ -1,0 +1,542 @@
+/* تنسيق الجسم */
+body {
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* نوع الخط */
+    background-color: #e7e6e0; /* لون الخلفية */
+}
+
+/* تنسيق الهيدر */
+header {
+    display: flex; /* استخدام flexbox لتوزيع العناصر */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    justify-content: space-between; /* توزيع العناصر بين الجانبين */
+    padding: 10px; /* المساحة الداخلية */
+    background-color: #e4e3e0; /* لون خلفية الهيدر */
+    color: #615c5c; /* لون النص */
+    height: 80px; /* تحديد ارتفاع الهيدر */
+    position: relative; /* لجعل العناصر الداخلية تتداخل بشكل صحيح */
+
+}
+
+
+
+/* تنسيق الشعار */
+.logo {
+    max-width: 50px; /* الحد الأقصى لعرض الشعار */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    padding: 5px; /* إضافة حواف للشعار */
+    border-radius: 5px; /* زوايا دائرية */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ظل للشعار */
+    position: absolute; /* لجعل الشعار يظهر فوق الخلفية */
+    top: 50%; /* مركز الرأس عموديًا */
+    left: 20px; /* تحريك الشعار إلى اليسار */
+    transform: translateY(-50%); /* ضبط الشعار في المركز */
+}
+
+/* تنسيق قائمة التنقل */
+.navigation {
+    flex-grow: 1; /* السماح للقائمة بالنمو لتملأ المساحة */
+    text-align: center; /* محاذاة العناصر في الوسط */
+}
+
+.navigation ul {
+    list-style-type: none; /* إزالة النقاط من القائمة */
+    padding: 0; /* إزالة الحشو */
+    margin: 0; /* إزالة الهوامش */
+}
+
+.navigation li {
+    display: inline; /* عرض العناصر في نفس السطر */
+    margin: 0 15px; /* فارق المسافة بين العناصر */
+}
+
+.navigation a {
+    color: #3f4134; /* لون الروابط */
+    text-decoration: none; /* إزالة الخط السفلي من الروابط */
+    font-weight: bold; /* جعل النص عريض */
+    font-size: 30px; /* حجم الخط */
+}   
+
+.navigation a:hover {
+    text-decoration: underline; /* إضافة خط سفلي عند تمرير الفأرة */
+    color: antiquewhite; /* تغيير اللون عند التمرير */
+}
+/* التحكم في حجم الأيقونة */
+.contact-label .icon {
+    width: 18px;   /* العرض - يمكنك تغييره حسب رغبتك */
+    height: 18px;  /* الطول - يمكن تغييره */
+    margin-right: 2px; /* مسافة صغيرة بين الأيقونة والنص */
+    vertical-align: middle; /* يضمن محاذاة الأيقونة مع النص */
+}
+
+/* تنسيق قسم */
+.hero {
+    position: relative; /* لجعل العناصر الداخلية تتداخل بشكل صحيح */
+    display: flex; /* استخدام flexbox لتوزيع العناصر */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    justify-content: center; /* توسيط العناصر أفقيًا */
+    height: 100vh; /* ارتفاع كامل الشاشة */
+    background-image: url('images/img8.jpg'); /* رابط الصورة كخلفية */
+    background-size: cover; /* تغطية كاملة للقسم بالصورة */
+    background-position: center; /* توسيط الصورة */
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 20px; /* المساحة الداخلية */
+}
+
+/* تنسيق النص */
+.herosub {
+    padding: 20px; /* المساحة الداخلية */
+    border-radius: 10px; /* زوايا دائرية */
+    background-color: rgba(211, 210, 208, 0.9); /* خلفية بيضاء شبه شفافة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف لإبراز القسم */
+}
+
+/* تنسيق اسم المشروع */
+.nam {
+    font-size: 48px; /* حجم الخط */
+    margin: 10px 0; /* الهوامش */
+}
+
+/* تنسيق العنوان */
+.title {
+    font-size: 24px; /* حجم الخط */
+    margin: 10px 0; /* الهوامش */
+}
+
+/* تنسيق الأزرار */
+.heroBtns {
+    margin-top: 20px; /* المسافة العلوية */
+}
+
+.hirme {
+    display: inline-block; /* جعل الزر كعنصر كتلة */
+    background-color: #6e6354; /* لون خلفية الزر */
+    color: #e0d9d0; /* لون النص */
+    padding: 10px 20px; /* المساحة الداخلية */
+    font-size: 18px; /* حجم الخط */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا دائرية */
+    text-decoration: none; /* إزالة الخط السفلي */
+    transition: background-color 0.3s; /* تأثير الانتقال */
+}
+
+.hirme:hover {
+    background-color: #d6d0d0; /* لون الخلفية عند التمرير */
+}
+
+/* تنسيق المنتجات */
+/* 🎨 تنسيق عنوان قسم المنتجات */
+.products h2 {
+    grid-column: 1 / -1;   /* يخلي العنوان يحتل العرض كامل */
+}
+
+.products h2 {
+    text-align: center;        /* توسيط النص */
+    font-size: 32px;           /* حجم الخط */
+    color: #3a2402;            /* اللون */
+    margin-bottom: 25px;       /* مسافة أسفل العنوان */
+    font-weight: bold;         /* خط عريض */
+    position: relative;        /* تجهيز للزخرفة */
+}
+
+/* قسم المنتجات */
+
+.products {
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;                             /* مسافة بين المنتجات */
+    max-width: 1100px;                     /* نحد العرض الكلي للقسم */
+    margin: 0 auto;                        /* توسيط القسم */
+    padding: 40px 20px;                    /* مسافات داخلية */
+    background-color: #f9f9f9;             /* خلفية فاتحة */
+}
+
+/* كل منتج */
+.product {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* صورة المنتج */
+.product-image {
+    width: 100%;
+    height: 230px;          /* نفس الارتفاع لكل الصور */
+    object-fit: cover;      /* تقص الصورة بلا ما تتشوه */
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* النصوص */
+.product-name {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #6e6354;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 15px;
+    color: #6e6354;
+    margin-bottom: 10px;
+}
+
+/* زر الشراء */
+.buy-button {
+    display: inline-block;
+    background-color: #6e6354;
+    color: #e0d9d0;
+    padding: 8px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.buy-button:hover {
+    background-color: #d6d0d0;
+    transform: scale(1.05);
+}
+
+/* 🎨 زخرفة العنوان */
+.products h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #6e6354;
+    margin: 10px auto 0; /* وسط العنوان */
+    border-radius: 3px;
+}
+
+/* ✨ أنيميشن للمنتجات */
+.product {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInZoom 0.6s forwards;
+}
+
+/* تأخير بسيط لكل منتج باش يبانوا وحدة وحدة */
+.product:nth-child(1) { animation-delay: 0.1s; }
+.product:nth-child(2) { animation-delay: 0.2s; }
+.product:nth-child(3) { animation-delay: 0.3s; }
+.product:nth-child(4) { animation-delay: 0.4s; }
+.product:nth-child(5) { animation-delay: 0.5s; }
+.product:nth-child(6) { animation-delay: 0.6s; }
+
+/* تعريف الأنيميشن */
+@keyframes fadeInZoom {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+/* تنسيق قسم إضافة منتج جديد */
+
+.NProducts h2 {
+    text-align: center;        /* توسيط النص */
+    font-size: 32px;           /* حجم الخط */
+    color: #3a2402;            /* اللون */
+    margin-bottom: 25px;       /* مسافة أسفل العنوان */
+    font-weight: bold;         /* خط عريض */
+    position: relative;        /* تجهيز للزخرفة */
+}
+
+
+.add-product {
+    max-width: 600px; /* أقصى عرض للصندوق */
+    margin: 60px auto; /* مسافة من الأعلى وتوسيط أفقياً */
+    padding: 35px; /* فراغ داخلي حول المحتوى */
+    background: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شبه شفافة */
+    border-radius: 15px; /* حواف دائرية */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* ظل ناعم */
+    backdrop-filter: blur(8px); /* ضبابية للخلفية (إحساس زجاجي) */
+    text-align: center; /* محاذاة النص للوسط */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* أنيميشن للحركة والظل */
+}
+
+.add-product:hover {
+    transform: translateY(-4px); /* تحريك الصندوق للأعلى قليلاً عند المرور */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* زيادة قوة الظل */
+}
+
+.add-product h2 {
+    margin-bottom: 25px; /* مسافة أسفل العنوان */
+    font-size: 26px; /* حجم الخط */
+    color: #4b3f35; /* لون النص */
+    font-weight: bold; /* خط عريض */
+}
+
+.add-product h2::after {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #6e6354;
+    margin: 10px auto 0;
+    border-radius: 20px;
+}
+
+/* 📋 الحقول */
+.form-group {
+    margin-bottom: 18px; /* مسافة بين الحقول */
+    text-align: center; /* النص في الوسط */
+}
+
+.form-group label {
+    display: block; /* كل لابل في سطر */
+    margin-bottom: 6px; /* مسافة أسفل العنوان */
+    font-weight: 600; /* خط شبه عريض */
+    color: #333; /* لون غامق */
+    font-size: 16px; /* حجم النص */
+}
+
+/* كل الحقول بنفس المقاس وأصغر */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 70%;  /* عرض الحقل */
+    max-width: 350px; /* حد أقصى للعرض */
+    padding: 10px; /* فراغ داخلي */
+    border: 1.5px solid #aaa; /* إطار رمادي */
+    border-radius: 8px; /* زوايا مستديرة */
+    font-size: 15px; /* حجم الخط */
+    background: #fafaf8; /* خلفية بيضاء */
+    margin: 0 auto; /* توسيط الحقل */
+    display: block; /* جعل العنصر كتلة */
+    transition: all 0.3s ease; /* أنيميشن للتأثيرات */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* ظل خفيف */
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #6e6354; /* تغيير لون الإطار عند التركيز */
+    box-shadow: 0 0 8px rgba(110, 99, 84, 0.3); /* توهج خفيف */
+    outline: none; /* إزالة الإطار الأزرق الافتراضي */
+    background-color: #fafafa; /* خلفية فاتحة عند الكتابة */
+}
+
+/* input file */
+#product-images {
+    border: 2px dashed #bbb; /* إطار متقطع */
+    background: #fdfdfd; /* خلفية فاتحة */
+    padding: 12px; /* فراغ داخلي */
+    font-size: 14px; /* حجم الخط */
+}
+#product-images:hover {
+    border-color: #6e6354; /* تغيير لون الإطار عند المرور */
+}
+
+/* زر إضافة المنتج */
+ .add-btn {
+            background: #6e6354;
+            color: #e0d9d0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;         /* يخلي الزر عنصر block */
+            margin: 20px auto;      /* يوسّطه أفقياً */
+
+           /* ⚡ هنا الانتقالات */
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+          /* 🎨 التغييرات عند التمرير */
+        .add-btn:hover {
+            background: #4b3f35;        /* يتغير اللون */
+            transform: scale(1.05);     /* يكبر شوي */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* ظل ناعم */
+        }
+
+         /* 🎨 عند الضغط */
+        .add-btn:active {
+            transform: scale(0.95); /* ينضغط شوي */
+        }
+        /* 🎨 خلفية القسم*/
+     .NProducts {
+    min-height: 400px;   /* تعطيه ارتفاع */
+    padding: 40px;       /* مسافة داخلية */
+}
+
+
+
+
+
+.add-product button:hover {
+    background: linear-gradient(135deg, #4b3f35, #2c241c); /* تغيير التدرج عند المرور */
+    transform: translateY(-2px); /* حركة خفيفة لأعلى */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25); /* ظل أقوى */
+}
+
+
+.info-text {
+    text-align: center;            /* توسيط النص */
+    color: #856404;                /* لون ذهبي غامق */
+
+    border-radius: 8px;            /* زوايا ناعمة */
+    padding: 12px 18px;            /* مسافة داخلية */
+    font-size: 15px;               /* حجم الخط */
+    font-style: italic;            /* مائل */
+    max-width: 70%;                /* ما يكونش عريض بزاف */
+    margin: 25px auto 0;           /* مسافة وتوسيط وسط القسم */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ظل خفيف */
+}
+/* قسم سياسة الموقع */
+.policy-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f7f7f7, #7e6412);
+    text-align: center;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+    font-family: 'Cairo', sans-serif;
+}
+
+.policy-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.policy-section h2 {
+    font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #dfd6ae;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.policy-section p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.policy-section ul li {
+    font-size:1.5rem;
+    color: #333;
+    margin: 15px 0;
+    position: relative;
+    padding-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.policy-section ul li i {
+    color: #a1860a;
+    font-size: 22px;
+    margin-left: 12px;
+}
+
+
+/* تنسيق الفوتر */
+.footer {
+    background-color: #6e6354; /* لون الخلفية */
+    height: 50px; /* ارتفاع الفوتر */
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 10px; /* المساحة الداخلية */
+}
+/* 📱 تنسيق عام للشاشات الصغيرة */
+@media (max-width: 768px) {
+
+    /* الهيدر */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navigation a {
+        font-size: 20px;
+    }
+
+    /* قسم hero */
+    .nam {
+        font-size: 28px;
+    }
+    .title {
+        font-size: 18px;
+    }
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    /* قسم المنتجات */
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 20px 10px;
+    }
+    .product-image {
+        height: 180px;
+    }
+
+    /* قسم إضافة منتج */
+    .add-product {
+        padding: 20px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 90%;
+        font-size: 14px;
+    }
+    .add-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* قسم السياسة */
+    .policy-section {
+        padding: 30px 15px;
+    }
+    .policy-section h2 {
+        font-size: 1.5rem;
+    }
+    .policy-section ul li {
+        font-size: 1rem;
+    }
+
+    /* الفوتر */
+    .footer {
+        font-size: 14px;
+        height: auto;
+        padding: 15px;
+    }
+}

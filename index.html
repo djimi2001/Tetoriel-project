@@ -1,0 +1,274 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <img src="images/Log.png" alt="شعار متجر سند" class="logo">
+        
+        <nav class="navigation">
+            <ul>
+                <li><a href="#offre">سياسة الموقع</a></li>
+                <li><a href="#new article">أضف منتجات</a></li>
+                <li><a href="#article">  المنتجات</a></li>
+            </ul>        
+        </nav>
+        <div class="contact-info">
+    <!-- رابط الهاتف -->
+    <a href="tel:+123 673 32 28 29" class="phone">+123 673 32 28 29</a> 
+    
+    <!-- قسم خاص بالأيقونة + النص -->
+    <div class="contact-label">
+        <img src="images/ico.png" alt="تواصل معنا" class="icon"> <!-- أيقونة الهاتف -->
+        <span>تواصل معنا</span>
+    </div>
+</div>
+
+    </header>
+    <hr class="divider">
+    <section class="hero">
+        <div class="herosub">
+            <h1 class="nam">سند</h1>  
+            <h1 class="title">مشروع لبيع المستلزمات المصنوعة يدوياً من سعف والنخيل كمادة أولية</h1>
+            <div class="heroBtns">
+                <a class="hirme" href="#new article">اعرض منتجاتك</a>  
+            </div>
+        </div>
+    </section>
+    <hr class="divider"> <!-- إضافة خط الفصل -->
+    <section class="products" id="article">
+        <h2>المنتجات</h2>
+    <div class="product">
+        <img src="images/img1.jpg" alt="اسم المنتج 1" class="product-image">
+        <h3 class="product-name"> ديكور للزهور </h3>
+        <p class="product-price">سعر: 1000.00 د.ج</p>
+       <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <div class="product">
+        <img src="images/img2.jpg" alt="اسم المنتج 2" class="product-image">
+        <h3 class="product-name">صحن صغير</h3>
+        <p class="product-price">سعر: 1500.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <div class="product">
+        <img src="images/img4.jpg" alt="اسم المنتج 3" class="product-image">
+        <h3 class="product-name">  حاجز صغير للزينة</h3>
+        <p class="product-price">سعر: 2000.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+       
+    </div>
+    <div class="product">
+        <img src="images/img5.jpg" alt="اسم المنتج 3" class="product-image">
+        <h3 class="product-name">  سلال للنزهة</h3>
+        <p class="product-price">سعر: 2000.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <div class="product">
+        <img src="images/img6.jpg" alt="اسم المنتج 3" class="product-image">
+        <h3 class="product-name">  صندوق تخزين</h3>
+        <p class="product-price">سعر: 2000.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <div class="product">
+        <img src="images/img7.jpg" alt="اسم المنتج 3" class="product-image">
+        <h3 class="product-name"> قبعة</h3>
+        <p class="product-price">سعر: 2000.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <div class="product">
+        <img src="images/img8.jpg" alt="اسم المنتج 3" class="product-image">
+        <h3 class="product-name">  طبق</h3>
+        <p class="product-price">سعر: 2000.00 د.ج</p>
+        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">اشتري</button>
+
+    </div>
+    <!-- ✅ بطاقة الدفع (Popup Modal) -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePayment()">&times;</span>
+    <h3>💳 الدفع بالبطاقة الذهبية</h3>
+    <p id="productInfo"></p>
+    
+    <form>
+      <label>رقم البطاقة:</label>
+      <input type="text" maxlength="16" placeholder="0000 0000 0000 0000" required>
+
+      <label>تاريخ الانتهاء:</label>
+      <input type="text" maxlength="5" placeholder="MM/YY" required>
+
+      <label>CVV:</label>
+      <input type="text" maxlength="3" placeholder="***" required>
+
+      <label>الاسم على البطاقة:</label>
+      <input type="text" placeholder="الاسم الكامل" required>
+
+      <button type="submit" class="pay-btn">ادفع الآن</button>
+    </form>
+  </div>
+</div>
+
+<style>
+
+/* تصميم الـ Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.6);
+}
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: red;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.pay-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.pay-btn:hover { background: #218838; }
+</style>
+
+<script>
+function openPayment(productName, price) {
+    document.getElementById("paymentModal").style.display = "block";
+    document.getElementById("productInfo").innerText = "🛒 المنتج: " + productName + " | السعر: " + price;
+}
+function closePayment() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+</script>
+    <!-- يمكنك إضافة المزيد من المنتجات هنا -->
+    </section>
+    <hr class="divider"> <!-- إضافة خط الفصل -->
+
+<section class="NProducts" id="new article"> <!-- ✅ تعديل: إضافة tag section بدل < فقط -->
+    
+    <h2>أضف منتجك اليدوي</h2>
+
+    <form>
+        <!-- ✅ الحقل: اسم المنتج -->
+        <div class="form-group">
+            <label for="product-name">اسم المنتج:</label>
+            <input type="text" id="product-name" required>
+        </div>
+
+        <!-- ✅ الحقل: وصف المنتج -->
+        <div class="form-group">
+            <label for="product-description">وصف المنتج:</label>
+            <textarea id="product-description" rows="4" required></textarea>
+        </div>
+
+        <!-- ✅ الحقل: سعر المنتج -->
+        <div class="form-group">
+            <label for="product-price">سعر المنتج بالدينار الجزائري:</label>
+               <input type="number" id="product-price" required>
+            
+        </div>
+
+        <!-- ✅ الحقل: فئة المنتج -->
+        <div class="form-group">
+            <label for="product-category">فئة المنتج:</label>
+            <select id="product-category" required>
+                <option value="">اختر الفئة</option>
+                <option value="home essentials"> أدوات منزلية</option>
+                <option value="small furniture">أثاث صغير</option>
+                <option value="home-decor">ديكور منزلي</option>
+                <option value="accessories"> إكسسوارات شخصية</option>
+                <option value="traditional cultural"> منتجات تقليدية تراثية</option>
+            </select>
+        </div>
+
+        <!-- ✅ الحقل: صور المنتج -->
+        <div class="form-group">
+            <label for="product-images">صور المنتج:</label>
+            <input type="file" id="product-images" multiple required>
+        </div>
+
+        <!-- ✅ الحقل: عدد المنتجات -->
+        <div class="form-group">
+            <label for="product-quantity">عدد المنتجات المتاحة:</label>
+            <input type="number" id="product-quantity" required>
+        </div>
+
+        <!-- ✅ زر الإضافة -->
+    <button class="add-btn">إضافة المنتج</button>
+
+
+    </form>
+
+    <!-- ✅ نص الملاحظة -->
+    <p class="info-text">تأكد من أن المنتج يتوافق مع سياسات الموقع قبل الإضافة</p>
+</section>
+
+<hr class="divider"> <!-- إضافة خط الفصل -->
+    <!-- بداية قسم سياسة الموقع -->
+<section id="offre" class="policy-section">
+    <div class="container">
+        <h2>سياسة الموقع</h2>
+        <p>مرحبًا بك في موقعنا.   :
+        </p>
+        <ul>
+           <li><i class="fas fa-user-shield"></i> سند مشروع يقدم الدعم المالي والنفسي للمرأة الماكثة في البيت</li>
+            <li><i class="fas fa-balance-scale"></i>    الموقع مخصص لبيع المستلزمات المصنوعة يدويا تعتمد على سعف النخيل كمادة اولية</li>
+            <li><i class="fas fa-lock"></i> نستخدم أحدث معايير الأمان</li> 
+        </ul>
+        <p>
+            إذا كان لديك أي استفسارات حول هذه السياسة، يمكنك التواصل معنا عبر رقم الهاتف الموجود أعلاه
+    </div>
+</section>
+<!-- نهاية قسم سياسة الموقع -->
+<hr class="divider"> <!-- إضافة خط الفصل -->
+
+     
+    <footer class="footer">
+
+        <!-- هنا يمكن إضافة المزيد من المحتوى -->
+    </footer>
+<script>
+document.addEventListener("scroll", function() {
+    let policySection = document.querySelector(".policy-section");
+    let sectionTop = policySection.getBoundingClientRect().top;
+    let screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+        policySection.classList.add("visible");
+    }
+});
+</script>
+
+</body>
+</html>
