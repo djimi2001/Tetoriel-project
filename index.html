@@ -91,30 +91,28 @@
         <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
-    <!-- ✅ بطاقة الدفع (Popup Modal) -->
-<div id="paymentModal" class="modal">
+    <!-- ✅ نموذج حجز معلومات -->
+<div id="reservationModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closePayment()">&times;</span>
-    <h3>💳 الدفع بالبطاقة الذهبية</h3>
-    <p id="productInfo"></p>
-    
-    <form>
-      <label>رقم البطاقة:</label>
-      <input type="text" maxlength="16" placeholder="0000 0000 0000 0000" required>
+    <span class="close" onclick="closeReservation()">&times;</span>
+    <h3>📝 نموذج حجز المنتج</h3>
+    <p id="selectedProductName">🛒 المنتج: </p>
 
-      <label>تاريخ الانتهاء:</label>
-      <input type="text" maxlength="5" placeholder="MM/YY" required>
-
-      <label>CVV:</label>
-      <input type="text" maxlength="3" placeholder="***" required>
-
-      <label>الاسم على البطاقة:</label>
+    <form id="reservationForm">
+      <label>الاسم واللقب:</label>
       <input type="text" placeholder="الاسم الكامل" required>
 
-      <button type="submit" class="pay-btn">ادفع الآن</button>
+      <label>المكان / العنوان:</label>
+      <input type="text" placeholder="الولاية، البلدية..." required>
+
+      <label>عدد المنتجات المطلوبة:</label>
+      <input type="number" min="1" value="1" required>
+
+      <button type="submit" class="pay-btn">إرسال الطلب</button>
     </form>
   </div>
 </div>
+
 
 <style>
 
@@ -163,14 +161,46 @@ input {
 </style>
 
 <script>
-function openPayment(productName, price) {
-    document.getElementById("paymentModal").style.display = "block";
-    document.getElementById("productInfo").innerText = "🛒 المنتج: " + productName + " | السعر: " + price;
+function openReservation(productName) {
+    document.getElementById("reservationModal").style.display = "block";
+    document.getElementById("selectedProductName").innerText = "🛒 المنتج: " + productName;
 }
-function closePayment() {
-    document.getElementById("paymentModal").style.display = "none";
+
+function closeReservation() {
+    document.getElementById("reservationModal").style.display = "none";
 }
+
+// يمكنك تعديل هذا الجزء لإرسال البيانات فعلياً إلى سيرفر أو بريد إلكتروني
+document.getElementById("reservationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    // إرسال البيانات إلى FormSubmit
+    fetch("https://formsubmit.co/benbahoudjamila2001@gmail.com", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("✅ تم إرسال طلبك بنجاح! سيتم التواصل معك قريبًا.");
+            form.reset();
+            closeReservation();
+        } else {
+            alert("❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("❌ تعذر إرسال الطلب.");
+    });
+});
+
 </script>
+
     <!-- يمكنك إضافة المزيد من المنتجات هنا -->
     </section>
     <hr class="divider"> <!-- إضافة خط الفصل -->
@@ -273,4 +303,5 @@ document.addEventListener("scroll", function() {
 </body>
 
 </html>
+
 
