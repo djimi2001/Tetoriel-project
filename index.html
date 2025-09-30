@@ -98,22 +98,21 @@
     <h3>📝 نموذج حجز المنتج</h3>
     <p id="selectedProductName">🛒 المنتج: </p>
 
-    <form id="reservationForm">
-     
-      <label>الاسم واللقب:</label>
-      <input type="text" placeholder="الاسم الكامل" required>
+   <form id="reservationForm" action="https://formsubmit.co/benbahoudjamila2001@gmail.com" method="POST">
+  <label>الاسم واللقب:</label>
+  <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
 
-      <label>المكان / العنوان:</label>
-      <input type="text" placeholder="الولاية، البلدية..." required>
+  <label>المكان / العنوان:</label>
+  <input type="text" name="العنوان" placeholder="الولاية، البلدية..." required>
 
-      <label>عدد المنتجات المطلوبة:</label>
-      <input type="number" min="1" value="1" required>
-     
-     <input type="hidden" name="اسم المنتج" id="selectedProductInput">
+  <label>عدد المنتجات المطلوبة:</label>
+  <input type="number" name="العدد" min="1" value="1" required>
 
+  <input type="hidden" name="اسم المنتج" id="selectedProductInput">
 
-      <button type="submit" class="pay-btn">إرسال الطلب</button>
-    </form>
+  <button type="submit" class="pay-btn">إرسال الطلب</button>
+</form>
+
   </div>
 </div>
 
@@ -177,31 +176,17 @@ function closeReservation() {
 
 // يمكنك تعديل هذا الجزء لإرسال البيانات فعلياً إلى سيرفر أو بريد إلكتروني
 document.getElementById("reservationForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
     const form = e.target;
 
-    // إرسال البيانات إلى FormSubmit
-    fetch("https://formsubmit.co/benbahoudjamila2001@gmail.com", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams(new FormData(form)).toString()
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("✅ تم إرسال طلبك بنجاح! سيتم التواصل معك قريبًا.");
-            form.reset();
-            closeReservation();
-        } else {
-            alert("❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.");
-        }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("❌ تعذر إرسال الطلب.");
-    });
+    const productInput = document.getElementById("selectedProductInput");
+    if (!productInput.value) {
+        alert("⚠️ لم يتم تحديد المنتج!");
+        e.preventDefault(); // أوقفي الإرسال إذا لا يوجد منتج
+        return;
+    }
+
+    alert("📨 سيتم إرسال الطلب الآن...");
+    // لا تكتبي e.preventDefault(); هنا
 });
 
 </script>
@@ -308,6 +293,7 @@ document.addEventListener("scroll", function() {
 </body>
 
 </html>
+
 
 
 
