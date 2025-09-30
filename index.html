@@ -46,49 +46,49 @@
         <img src="images/img1.jpg" alt="اسم المنتج 1" class="product-image">
         <h3 class="product-name"> ديكور للزهور </h3>
         <p class="product-price">سعر: 1000.00 د.ج</p>
-       <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+       <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <div class="product">
         <img src="images/img2.jpg" alt="اسم المنتج 2" class="product-image">
         <h3 class="product-name">صحن صغير</h3>
         <p class="product-price">سعر: 1500.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <div class="product">
         <img src="images/img4.jpg" alt="اسم المنتج 3" class="product-image">
         <h3 class="product-name">  حاجز صغير للزينة</h3>
         <p class="product-price">سعر: 2000.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
        
     </div>
     <div class="product">
         <img src="images/img5.jpg" alt="اسم المنتج 3" class="product-image">
         <h3 class="product-name">  سلال للنزهة</h3>
         <p class="product-price">سعر: 2000.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <div class="product">
         <img src="images/img6.jpg" alt="اسم المنتج 3" class="product-image">
         <h3 class="product-name">  صندوق تخزين</h3>
         <p class="product-price">سعر: 2000.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <div class="product">
         <img src="images/img7.jpg" alt="اسم المنتج 3" class="product-image">
         <h3 class="product-name"> قبعة</h3>
         <p class="product-price">سعر: 2000.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <div class="product">
         <img src="images/img8.jpg" alt="اسم المنتج 3" class="product-image">
         <h3 class="product-name">  طبق</h3>
         <p class="product-price">سعر: 2000.00 د.ج</p>
-        <button class="buy-button" onclick="openPayment('ديكور للزهور','100.00 ر.س')">احجز</button>
+        <button class="buy-button" onclick="openReservation('ديكور للزهور','100.00 ر.س')">احجز</button>
 
     </div>
     <!-- ✅ نموذج حجز معلومات -->
@@ -99,6 +99,7 @@
     <p id="selectedProductName">🛒 المنتج: </p>
 
     <form id="reservationForm">
+     
       <label>الاسم واللقب:</label>
       <input type="text" placeholder="الاسم الكامل" required>
 
@@ -107,6 +108,9 @@
 
       <label>عدد المنتجات المطلوبة:</label>
       <input type="number" min="1" value="1" required>
+     
+     <input type="hidden" name="اسم المنتج" id="selectedProductInput">
+
 
       <button type="submit" class="pay-btn">إرسال الطلب</button>
     </form>
@@ -164,6 +168,7 @@ input {
 function openReservation(productName) {
     document.getElementById("reservationModal").style.display = "block";
     document.getElementById("selectedProductName").innerText = "🛒 المنتج: " + productName;
+    document.getElementById("selectedProductInput").value = productName; // ✅ هذا هو السطر الجديد
 }
 
 function closeReservation() {
@@ -303,5 +308,6 @@ document.addEventListener("scroll", function() {
 </body>
 
 </html>
+
 
 
