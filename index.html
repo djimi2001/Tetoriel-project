@@ -98,7 +98,7 @@
     <span class="close" onclick="closeReservation()">&times;</span>
     <h3>📝 نموذج حجز المنتج</h3>
     <p id="selectedProductName">🛒 المنتج: </p>
-
+   
    <form id="reservationForm" action="https://formcarry.com/s/qBgf36UcF5a" method="POST">
   <label>الاسم واللقب:</label>
   <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
@@ -115,7 +115,7 @@
   <input type="hidden" name="اسم المنتج" id="selectedProductInput">
 
   <button type="submit" class="pay-btn">إرسال الطلب</button>
-</form>
+     </form>
 
   </div>
 </div>
@@ -202,7 +202,8 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
     
     <h2>أضف منتجك اليدوي</h2>
 
-    <form>
+   <form id="addProductForm" action="https://formcarry.com/s/qBgf36UcF5a" method="POST">
+
         <!-- ✅ الحقل: اسم المنتج -->
         <div class="form-group">
             <label for="product-name">اسم المنتج:</label>
@@ -250,7 +251,7 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
         <!-- ✅ زر الإضافة -->
     <button class="add-btn">إضافة المنتج</button>
 
-
+       <input type="hidden" name="form_type" value="إضافة منتج جديد">
     </form>
 
     <!-- ✅ نص الملاحظة -->
@@ -292,10 +293,17 @@ document.addEventListener("scroll", function() {
     }
 });
 </script>
+ <script>
+document.getElementById("addProductForm").addEventListener("submit", function(e) {
+    alert("📨 سيتم إرسال تفاصيل المنتج الآن...");
+});
+</script>
+
 
 </body>
 
 </html>
+
 
 
 
